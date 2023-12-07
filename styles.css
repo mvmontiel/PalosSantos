@@ -61,7 +61,7 @@
 }
 
 .jumbotron a:hover {
-  color: #CC3939 !important;
+  color: #CC3939;
 }
 
 h2 {
@@ -93,9 +93,12 @@ h2 {
   margin-bottom: 45px;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 2px;
 }
-.variedades h5 {
+.variedades h4 {
+  margin-top: 10px;
   font-weight: 700;
+  font-size: 20px;
 }
 
 .sug-izq {
@@ -224,6 +227,18 @@ footer a:hover {
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+@media (min-width: 400px) and (max-width: 800px) {
+  .variedades .variedades-cards {
+    display: grid;
+    grid-template-columns: 200px 200px;
+  }
+}
+@media (max-width: 399px) {
+  .variedades .variedades-cards {
+    display: grid;
+    grid-template-columns: 200px;
+  }
+}
 .variedades .card-img-top {
   margin-bottom: 0;
 }
@@ -319,6 +334,25 @@ a:hover {
   text-transform: uppercase;
 }
 .blog .video iframe {
+  max-width: 100%;
+  animation-duration: infinite;
+}
+.blog .sugerencia {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 25px;
+}
+.blog .sugerencia h2 {
+  font-weight: 900;
+  font-size: 25px;
+  color: #CC3939;
+  text-transform: uppercase;
+}
+.blog .sugerencia img {
+  width: 300px;
+  height: 425px;
   max-width: 100%;
 }
 .blog h3 {

@@ -195,12 +195,12 @@ footer a:hover {
   font-weight: 900;
 }
 .compra .formulario {
-  max-width: 600px;
+  max-width: 80vh;
   color: #8f7c7c;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 100px;
+  margin-left: 90px;
 }
 .compra .boton {
   background-color: #CC3939;
@@ -208,8 +208,8 @@ footer a:hover {
   padding: 5px 12px;
   font-weight: 900;
   border-radius: 8px;
-  margin: 0 200px 0 200px;
-  min-width: 100px;
+  margin: 0 200px 0 180px;
+  min-width: 80px;
 }
 .compra .boton:hover {
   color: #000;

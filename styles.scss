@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One&family=Dawning+of+a+New+Day&family=Playpen+Sans:wght@200&family=Simonetta:wght@400;900&display=swap');
 
 $color-palos: #CC3939;
-
+$color-palos2: rgb(144, 44, 44);
+$color-palos3: rgba(144, 44, 44, 0.8);
 
 *{
     margin: 0;
@@ -25,7 +26,7 @@ $color-palos: #CC3939;
         font-style:normal;
         font-size: 14px;
         text-shadow: none;
-        background-color: rgba(204, 56, 56, 0.63);
+        background-color: $color-palos2;
         padding: 2px;
         border-radius: 7px;
     }
@@ -53,6 +54,7 @@ $color-palos: #CC3939;
         align-items: center;
         text-align: center;
         margin-bottom: 50px;
+        text-shadow: 3px 3px 3px rgba(255, 255, 255, 0.584);
     }
 
     a{
@@ -71,44 +73,114 @@ $color-palos: #CC3939;
 }
 
 .jumbotron a:hover{
-    color: $color-palos 
+    color: $color-palos; 
 }
 
-h2{
-    margin-top: 20px;
-    margin-left: 10px;
-    font-weight: 700;
-}
-
-.cta-variedades a{
-    text-decoration: underline;
-    margin-left: 15px;
-    color: $color-palos;
-    font-weight: 700;
-    font-size: larger;
-}
-
-.cta-variedades a:hover{
-    color: #000;
-}
-
-.variedades{
+.sect-variedades{
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content:space-between;
+    height: auto;
+    margin-bottom: 15px;
 
-    img{
-        height: 230px;
-        margin-bottom: 45px;
-        object-fit: cover;
-        border-radius: 2px;
+    h2{
+        margin-top: 20px;
+        margin-left: 10px;
+        font-weight: 700;
+        text-shadow: 2px 2px 2px rgba(113, 108, 108, 0.7);
+    }
+    
+    .cta-variedades{
+        margin: 0 0 15px 20px;
+    }
+    .cta-variedades a{
+        text-decoration: underline;
+        color: $color-palos;
+        font-weight: 700;
+        font-size: larger;
+    }
+    
+    .cta-variedades a:hover{
+        color: #000;
     }
 
-    h4{
-        margin-top: 10px;
-        font-weight: 700;
-        font-size: 20px;
+    .variedades{
+        display: grid;
+        grid-template-areas: "var1 var2 var3 var4";
+        margin: 0 20px 0 20px;
+        justify-content: space-between;
+        gap: 10px;
+        color: #fff;
+        text-align: center;
+
+        .variedad1{
+            background-color: #000;
+            border: $color-palos solid 2px;
+            border-radius: 5px;
+            grid-area: var1;
+            box-shadow:  2px 2px 2px rgba(10, 10, 10, 0.7);
+        }
+
+        .variedad2{
+            background-color: #000;
+            border: $color-palos solid 2px;
+            border-radius: 5px;
+            grid-area: var2;
+            box-shadow:  2px 2px 2px rgba(10, 10, 10, 0.7);
+            
+            img{
+                width: 220px;
+            }    
+        }
+
+        .variedad3{
+            background-color: #000;
+            border: $color-palos solid 2px;
+            border-radius: 5px;
+            grid-area: var3;
+            box-shadow:  2px 2px 2px rgba(10, 10, 10, 0.7);
+        }
+
+        .variedad4{
+            background-color: #000;
+            border: $color-palos solid 2px;
+            border-radius: 5px;
+            grid-area: var4;
+            box-shadow:  2px 2px 2px rgba(10, 10, 10, 0.7);
+        }
+
+        img{
+            height: 230px;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+    
+        h4{
+            margin-top: 10px;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        @media (min-width: 469px) and (max-width: 917px){
+            grid-template-areas: 
+                "var1 var2"
+                "var3 var4";
+            justify-content: space-evenly;
+            row-gap: 20px;
+                img{
+                    width: 220px; 
+                }
+        }
+
+        @media (max-width: 468px){
+            grid-template-areas: 
+                "var1"
+                "var2"
+                "var3"
+                "var4";
+            justify-content: center;
+                img{
+                    width: 220px; 
+                }
+        }
     }
 }
 
@@ -128,6 +200,7 @@ h2{
     .sug-descuento{
         font-size: 50px;
         color: $color-palos;
+        text-shadow: 3px 3px 5px rgba(255, 203, 203, 0.7);
     }
 
     a{
@@ -136,7 +209,7 @@ h2{
         border-radius: 7px;
         color: #fff;
         padding: 5px 10px;
-        background-color: $color-palos;
+        background-color: $color-palos2;
     }
 
     a:hover{
@@ -176,7 +249,7 @@ footer{
 .whatsapp{
     height: 50px;
     width: 50px;
-    background-color: rgba(204, 56, 56, 0.63);
+    background-color: $color-palos3;
     color:#fff;
     position: fixed;
     text-align: center;
@@ -213,11 +286,12 @@ footer{
         padding-top: 20px;
         color: #fff;
         font-weight: 900;
+        text-shadow: 3px 3px 3px rgba(125, 115, 115, 0.584)
     }
 
     .formulario{
         max-width: 80vh;
-        color: #8f7c7c;
+        color: $color-palos2;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -225,18 +299,23 @@ footer{
     }
 
     .boton{
-        background-color:$color-palos;
+        background-color: $color-palos;
         color: #fff;
         padding: 5px 12px;
         font-weight: 900;
         border-radius: 8px;
-        margin: 0 200px 0 180px;
-        min-width: 80px; 
+        max-width: 80px; 
+        align-self: center;
     }
 
     .boton:hover{
         color: #000;
     }
+}
+
+    
+input:focus{
+    box-shadow: 0 0 3px 5px $color-palos3 !important;
 }
 
 /* Inicia page Variedades */
@@ -247,6 +326,7 @@ footer{
         font-weight: 900;
         margin-top: 100px;
         margin-left: 25px;  
+        text-shadow: 2px 2px 2px rgba(113, 108, 108, 0.7)
     }
 
     .variedades-cards{
@@ -255,18 +335,23 @@ footer{
         flex-wrap: wrap;
         justify-content: space-evenly;
 
+        .card{
+            box-shadow:  2px 2px 2px rgba(10, 10, 10, 0.7);
+            border: solid 1px $color-palos3;
+        }
+
         @media (min-width: 400px) and (max-width: 800px){
             display: grid;
             grid-template-columns: 200px 200px;
+            row-gap: 10px;
         }
 
         @media (max-width: 399px){
             display: grid;
             grid-template-columns: 200px;
+            row-gap: 10px;
         }
     }
-
-
 
     .card-img-top{
         margin-bottom: 0;
@@ -338,7 +423,7 @@ a:hover{
         align-items: center;
         padding: 10px 20px;
         font-weight: 900;
-        background-color: rgba(204, 56, 56, 0.63);
+        background-color: $color-palos2;
         border-radius: 7px;
     }
 
@@ -354,9 +439,17 @@ a:hover{
     background-color: #000;
     padding: 25px 10px 25px 20px;
     color: #fff;
+    background-image: linear-gradient(rgba(181, 62, 62, 0.4), rgba(11, 11, 11, 0.7)), url(./img/fondosug.jpg);
+    background-position: center;
+    background-size: cover;
+
+    p{
+        font-size: 17px;
+    }
 
     h1{
         font-weight: 900;
+        text-shadow: 3px 3px 3px rgba(125, 115, 115, 0.584)
     }
 
     .video{
@@ -371,11 +464,14 @@ a:hover{
             font-size: 25px;
             color: $color-palos;
             text-transform: uppercase;
+            text-shadow: 0 2px 2px rgba(255, 255, 255, 0.915);
+            border: #000;
         }
 
         iframe {
             max-width: 100%;
             animation-duration: infinite;
+            border-radius: 10px;
         }
     }
 
@@ -384,21 +480,34 @@ a:hover{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding-bottom: 25px;
+        padding-bottom: 25px;   
 
         h2{
             font-weight: 900;
             font-size: 25px;
             color: $color-palos;
             text-transform: uppercase;
+            text-shadow: 0 2px 2px rgba(255, 255, 255, 0.915);
         }
 
         img{
             width: 300px;
             height: 425px;
             max-width: 100%;
+            border-radius: 10px;
+        }
+
+        p{
+            max-width: 70%;
+            text-align: center;
         }
     }
+}
+
+.newsletter{
+    background-color: #000;
+    color: #fff;
+    padding: 0 0 10px 10px;
 
     h3{
         padding-top: 10px;
@@ -406,7 +515,7 @@ a:hover{
     }
 
     .email{
-        color: $color-palos;
+        color: $color-palos3;
         font-weight: 900;
         max-width: 600px;
     }

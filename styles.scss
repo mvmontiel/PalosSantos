@@ -57,7 +57,7 @@ $color-palos3: rgba(144, 44, 44, 0.8);
 .jumbotron{
     margin-top: 75px;
     height: 400px;
-    background-color: #000;
+    background-color: #000 !important;
     background-image: url(./img/fondo.jpg);
     background-size: cover;
     background-position: bottom;

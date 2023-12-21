@@ -14,15 +14,18 @@
   color: #fff !important;
 }
 .navbar .nav-item-shop {
-  font-weight: 700;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-style: normal;
-  font-size: 14px;
-  text-shadow: none;
   background-color: rgb(144, 44, 44);
-  padding: 2px;
+  color: #fff;
+  padding: 5px 12px;
+  font-weight: 900;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
   border-radius: 7px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 2px;
 }
 .navbar a:hover {
   color: #CC3939 !important;
@@ -67,7 +70,6 @@
 
 .sect-variedades {
   width: 100%;
-  height: auto;
   margin-bottom: 15px;
 }
 .sect-variedades h2 {
@@ -96,6 +98,7 @@
   gap: 10px;
   color: #fff;
   text-align: center;
+  height: 100%;
 }
 .sect-variedades .variedades .variedad1 {
   background-color: #000;
@@ -199,10 +202,11 @@ footer {
   background-color: #000;
   color: #fff;
   text-align: center;
-  height: 100px;
+  height: 150px;
 }
 footer p {
-  margin-top: 20px;
+  margin: 25px 0 25px;
+  font-size: 18px;
 }
 footer a {
   color: #fff;
@@ -260,10 +264,15 @@ footer a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 90px;
+  margin: 90px;
+}
+@media (max-width: 634px) {
+  .compra .formulario {
+    margin: 10px;
+  }
 }
 .compra .boton {
-  background-color: #CC3939;
+  background-color: rgb(144, 44, 44);
   color: #fff;
   padding: 5px 12px;
   font-weight: 900;
@@ -280,10 +289,12 @@ input:focus {
 }
 
 /* Inicia page Variedades */
+.variedades {
+  height: 100%;
+}
 .variedades h1 {
   font-weight: 900;
-  margin-top: 100px;
-  margin-left: 25px;
+  margin: 120px 0 60px 25px;
   text-shadow: 2px 2px 2px rgba(113, 108, 108, 0.7);
 }
 .variedades .variedades-cards {
@@ -298,6 +309,7 @@ input:focus {
 }
 @media (min-width: 400px) and (max-width: 800px) {
   .variedades .variedades-cards {
+    height: auto;
     display: grid;
     grid-template-columns: 200px 200px;
     row-gap: 10px;
@@ -322,8 +334,7 @@ input:focus {
   font-weight: 900;
   padding: 0;
 }
-
-.call-variedades {
+.variedades .call-variedades {
   font-size: x-large;
   text-decoration: underline;
   font-weight: 900;
@@ -331,14 +342,12 @@ input:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px 0 20px;
+  margin: 60px 0 30px;
 }
-
-a {
+.variedades a {
   text-decoration: none;
 }
-
-a:hover {
+.variedades a:hover {
   color: #000;
 }
 
@@ -348,11 +357,13 @@ a:hover {
   background-color: #000;
   color: #fff;
   padding-bottom: 10px;
+  height: auto;
 }
 .nosotros h1 {
   margin-left: 25px;
   padding: 10px;
   font-weight: 900;
+  text-shadow: 3px 3px 3px rgba(125, 115, 115, 0.584);
 }
 .nosotros p {
   margin-left: 20px;
@@ -365,17 +376,22 @@ a:hover {
   height: 500px;
 }
 .nosotros a {
-  margin: 20px;
+  background-color: rgb(144, 44, 44);
+  color: #fff;
+  padding: 5px 12px;
+  font-weight: 900;
+  border-radius: 8px;
   text-decoration: none;
-  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 7px;
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  margin: 40px;
+  text-transform: uppercase;
   padding: 10px 20px;
-  font-weight: 900;
-  background-color: rgb(144, 44, 44);
-  border-radius: 7px;
 }
 .nosotros a span:hover {
   color: #000;
@@ -401,8 +417,9 @@ a:hover {
 .blog .video {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  text-align: center;
+  justify-content: center;
   padding-bottom: 25px;
 }
 .blog .video h2 {
@@ -421,8 +438,9 @@ a:hover {
 .blog .sugerencia {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  text-align: center;
+  justify-content: center;
   padding-bottom: 25px;
 }
 .blog .sugerencia h2 {
@@ -458,14 +476,15 @@ a:hover {
   max-width: 600px;
 }
 .newsletter button {
-  margin-left: 80px;
-  margin-bottom: 10px;
-  background-color: #CC3939;
+  background-color: rgb(144, 44, 44);
   color: #fff;
-  margin: 5px;
   padding: 5px 12px;
   font-weight: 900;
   border-radius: 8px;
+  margin-left: 80px;
+  margin-bottom: 10px;
+  background-color: #CC3939;
+  margin: 5px;
 }
 .newsletter button:hover {
   color: #000;

@@ -4,6 +4,28 @@ $color-palos: #CC3939;
 $color-palos2: rgb(144, 44, 44);
 $color-palos3: rgba(144, 44, 44, 0.8);
 
+@mixin boton-estilos{
+    background-color: $color-palos2;
+    color: #fff;
+    padding: 5px 12px;
+    font-weight: 900;
+    border-radius: 8px;
+}
+
+@mixin enlace-estilos {
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 7px;
+    color: #fff;
+}
+
+@mixin flex-c {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -20,15 +42,11 @@ $color-palos3: rgba(144, 44, 44, 0.8);
     }
 
     .nav-item-shop{
-        font-weight: 700;
+        @include boton-estilos;
+        @include enlace-estilos;
         text-transform: uppercase;
-        text-decoration: none;
-        font-style:normal;
         font-size: 14px;
-        text-shadow: none;
-        background-color: $color-palos2;
         padding: 2px;
-        border-radius: 7px;
     }
 
     a:hover{
@@ -49,10 +67,7 @@ $color-palos3: rgba(144, 44, 44, 0.8);
         font-weight: 900;
         font-size: 25px;
         text-transform: uppercase;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        @include flex-c;
         margin-bottom: 50px;
         text-shadow: 3px 3px 3px rgba(255, 255, 255, 0.584);
     }
@@ -64,21 +79,17 @@ $color-palos3: rgba(144, 44, 44, 0.8);
         border-radius: 7px;
         color: #fff;
         padding: 5px 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        @include flex-c;
     }
 
 }
 
 .jumbotron a:hover{
-    color: $color-palos; 
+    color: $color-palos;
 }
 
 .sect-variedades{
     width: 100%;
-    height: auto;
     margin-bottom: 15px;
 
     h2{
@@ -87,7 +98,7 @@ $color-palos3: rgba(144, 44, 44, 0.8);
         font-weight: 700;
         text-shadow: 2px 2px 2px rgba(113, 108, 108, 0.7);
     }
-    
+
     .cta-variedades{
         margin: 0 0 15px 20px;
     }
@@ -97,7 +108,7 @@ $color-palos3: rgba(144, 44, 44, 0.8);
         font-weight: 700;
         font-size: larger;
     }
-    
+
     .cta-variedades a:hover{
         color: #000;
     }
@@ -110,6 +121,7 @@ $color-palos3: rgba(144, 44, 44, 0.8);
         gap: 10px;
         color: #fff;
         text-align: center;
+        height: 100%;
 
         .variedad1{
             background-color: #000;
@@ -125,10 +137,10 @@ $color-palos3: rgba(144, 44, 44, 0.8);
             border-radius: 5px;
             grid-area: var2;
             box-shadow:  2px 2px 2px rgba(10, 10, 10, 0.7);
-            
+
             img{
                 width: 220px;
-            }    
+            }
         }
 
         .variedad3{
@@ -152,7 +164,7 @@ $color-palos3: rgba(144, 44, 44, 0.8);
             margin-bottom: 15px;
             object-fit: cover;
         }
-    
+
         h4{
             margin-top: 10px;
             font-weight: 700;
@@ -160,25 +172,25 @@ $color-palos3: rgba(144, 44, 44, 0.8);
         }
 
         @media (min-width: 469px) and (max-width: 917px){
-            grid-template-areas: 
+            grid-template-areas:
                 "var1 var2"
                 "var3 var4";
             justify-content: space-evenly;
             row-gap: 20px;
                 img{
-                    width: 220px; 
+                    width: 220px;
                 }
         }
 
         @media (max-width: 468px){
-            grid-template-areas: 
+            grid-template-areas:
                 "var1"
                 "var2"
                 "var3"
                 "var4";
             justify-content: center;
                 img{
-                    width: 220px; 
+                    width: 220px;
                 }
         }
     }
@@ -204,10 +216,7 @@ $color-palos3: rgba(144, 44, 44, 0.8);
     }
 
     a{
-        text-decoration: none;
-        font-weight: 700;
-        border-radius: 7px;
-        color: #fff;
+        @include enlace-estilos;
         padding: 5px 10px;
         background-color: $color-palos2;
     }
@@ -228,10 +237,11 @@ footer{
     background-color: #000;
     color: #fff;
     text-align: center;
-    height: 100px;
+    height: 150px;
 
     p{
-        margin-top: 20px;
+        margin: 25px 0 25px;
+        font-size: 18px;
     }
 
     a{
@@ -295,16 +305,16 @@ footer{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin-left: 90px;
+        margin: 90px;
+
+        @media (max-width: 634px){
+            margin: 10px;
+        }
     }
 
     .boton{
-        background-color: $color-palos;
-        color: #fff;
-        padding: 5px 12px;
-        font-weight: 900;
-        border-radius: 8px;
-        max-width: 80px; 
+        @include boton-estilos;
+        max-width: 80px;
         align-self: center;
     }
 
@@ -313,7 +323,6 @@ footer{
     }
 }
 
-    
 input:focus{
     box-shadow: 0 0 3px 5px $color-palos3 !important;
 }
@@ -321,11 +330,11 @@ input:focus{
 /* Inicia page Variedades */
 
 .variedades{
+    height: 100%;
 
     h1{
         font-weight: 900;
-        margin-top: 100px;
-        margin-left: 25px;  
+        margin: 120px 0 60px 25px;
         text-shadow: 2px 2px 2px rgba(113, 108, 108, 0.7)
     }
 
@@ -341,6 +350,7 @@ input:focus{
         }
 
         @media (min-width: 400px) and (max-width: 800px){
+            height: auto;
             display: grid;
             grid-template-columns: 200px 200px;
             row-gap: 10px;
@@ -367,25 +377,26 @@ input:focus{
         font-weight: 900;
         padding: 0;
     }
-}
 
-.call-variedades{
-    font-size: x-large;
-    text-decoration: underline;
-    font-weight: 900;
-    color: $color-palos;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px 0 20px;
-}
 
-a{
-    text-decoration: none;
-}
+    .call-variedades{
+        font-size: x-large;
+        text-decoration: underline;
+        font-weight: 900;
+        color: $color-palos;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 60px 0 30px;
+    }
+    
+    a{
+        text-decoration: none;
+    }
 
-a:hover{
-    color: #000;
+    a:hover{
+        color: #000;
+    }
 }
 
 /* Inicia page Nosotros */
@@ -395,11 +406,13 @@ a:hover{
     background-color: #000;
     color: #fff;
     padding-bottom: 10px;
+    height: auto;
 
     h1{
         margin-left: 25px;
         padding: 10px;
         font-weight: 900;
+        text-shadow: 3px 3px 3px rgba(125, 115, 115, 0.584)
     }
 
     p{
@@ -414,17 +427,12 @@ a:hover{
     }
 
     a{
-        margin: 20px;
-        text-decoration: none;
+        @include boton-estilos;
+        @include enlace-estilos;
+        @include flex-c;
+        margin: 40px;
         text-transform: uppercase;
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         padding: 10px 20px;
-        font-weight: 900;
-        background-color: $color-palos2;
-        border-radius: 7px;
     }
 
     a span:hover{
@@ -453,10 +461,8 @@ a:hover{
     }
 
     .video{
-        display: flex;
-        flex-direction: column;
+        @include flex-c;
         justify-content: center;
-        align-items: center;
         padding-bottom: 25px;
 
         h2{
@@ -476,11 +482,9 @@ a:hover{
     }
 
     .sugerencia{
-        display: flex;
-        flex-direction: column;
+        @include flex-c;
         justify-content: center;
-        align-items: center;
-        padding-bottom: 25px;   
+        padding-bottom: 25px;
 
         h2{
             font-weight: 900;
@@ -521,14 +525,11 @@ a:hover{
     }
 
     button{
+        @include boton-estilos;        
         margin-left: 80px;
         margin-bottom: 10px;
         background-color: $color-palos;
-        color: #fff;
         margin: 5px;
-        padding: 5px 12px;
-        font-weight: 900;
-        border-radius: 8px;
     }
 
     button:hover{
